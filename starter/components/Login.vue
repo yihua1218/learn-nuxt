@@ -1,11 +1,11 @@
 <template>
   <div>
-    <g-signin-button
+    <g-signin-with-different-account-button
       :params="googleSignInParams"
       @success="onSignInSuccess"
       @error="onSignInError">
       Sign in with Google
-    </g-signin-button>
+    </g-signin-with-different-account-button>    
   </div>
 </template>
 
