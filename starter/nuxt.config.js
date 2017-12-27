@@ -9,6 +9,9 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
+    script: [
+      { src: 'https://apis.google.com/js/api:client.js' }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -36,6 +39,13 @@ module.exports = {
     }
   },
   modules: [
-    'bootstrap-vue/nuxt'
-  ]
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/font-awesome'
+  ],
+  plugins: [
+    '~/plugins/vue-google-signin-button'
+  ],
+  env: {
+    google_app_client_id: process.env.GOOGLE_APP_CLIENT_ID || ''
+  }
 }
