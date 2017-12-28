@@ -10,6 +10,8 @@
 </template>
 
 <script>
+/* eslint-env browser */
+
 export default {
   data () {
     return {
@@ -20,7 +22,8 @@ export default {
        * @type {Object}
        */
       googleSignInParams: {
-        client_id: `${process.env.google_app_client_id}.apps.googleusercontent.com`
+        client_id: `${process.env.google_app_client_id}.apps.googleusercontent.com`,
+        scope: 'email profile openid'
       }
     }
   },
@@ -29,7 +32,23 @@ export default {
       // `googleUser` is the GoogleUser object that represents the just-signed-in user.
       // See https://developers.google.com/identity/sign-in/web/reference#users
       const profile = googleUser.getBasicProfile() // etc etc
-      console.log(profile)
+
+      const account = {
+        provider: 'google',
+        id: googleUser.getBasicProfile().getId(),
+        img: googleUser.getBasicProfile().getImageUrl(),
+        name: googleUser.getBasicProfile().getName()
+      }
+
+      const accountKey = `google-${account.id}`
+
+      if (profile.getId()) {
+        window.accounts[accountKey] = account
+      }
+
+      if (localStorage) {
+        localStorage.setItem('accounts', JSON.stringify(window.accounts))
+      }
     },
     onSignInError (error) {
       // `error` contains any error occurred.
