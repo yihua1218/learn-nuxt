@@ -1,9 +1,9 @@
 <template>
   <div class="user_list">
-    <user v-for="user in users"
-      v-bind:key="user.key"
-      v-bind:img="user.img"
-      v-bind:name="user.name">
+    <user v-for="account in accounts"
+      v-bind:key="account.key"
+      v-bind:img="account.img"
+      v-bind:name="account.name">
     </user>
   </div>
 </template>
@@ -15,20 +15,9 @@ export default {
   components: {
     User
   },
-  data () {
-    const users = []
-    if (typeof window !== 'undefined' && typeof window.accounts !== 'undefined') {
-      Object.keys(window.accounts).forEach((key) => {
-        const account = window.accounts[key]
-        users.push(account)
-      })
-    }
-    return {
-      users: users
-    }
-  },
-  methods: {
-  }
+  props: [
+    'accounts'
+  ]
 }
 </script>
 

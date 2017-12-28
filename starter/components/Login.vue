@@ -31,8 +31,6 @@ export default {
     onSignInSuccess (googleUser) {
       // `googleUser` is the GoogleUser object that represents the just-signed-in user.
       // See https://developers.google.com/identity/sign-in/web/reference#users
-      const profile = googleUser.getBasicProfile() // etc etc
-
       const account = {
         provider: 'google',
         id: googleUser.getBasicProfile().getId(),
@@ -40,15 +38,7 @@ export default {
         name: googleUser.getBasicProfile().getName()
       }
 
-      const accountKey = `google-${account.id}`
-
-      if (profile.getId()) {
-        window.accounts[accountKey] = account
-      }
-
-      if (localStorage) {
-        localStorage.setItem('accounts', JSON.stringify(window.accounts))
-      }
+      this.$emit('account', account)
     },
     onSignInError (error) {
       // `error` contains any error occurred.

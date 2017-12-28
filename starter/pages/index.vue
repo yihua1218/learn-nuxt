@@ -7,8 +7,8 @@
       <h2 class="subtitle">
         Laboratory
       </h2>
-      <login/>
-      <AssociateAccounts/>
+      <login v-on:account="addAccount"/>
+      <AssociateAccounts :accounts="$data.accounts"/>
     </div>
   </section>
 </template>
@@ -23,6 +23,27 @@ export default {
     Logo,
     Login,
     AssociateAccounts
+  },
+  data () {
+    let accounts = {}
+
+    if (typeof window !== 'undefined') {
+      accounts = window.accounts || {}
+    }
+    return {
+      accounts: accounts
+    }
+  },
+  methods: {
+    addAccount: function (account) {
+      console.log('acccount:', account)
+      const accountKey = `${account.provider}:${account.id}`
+      window.accounts[accountKey] = account
+      this.accounts = window.accounts
+      if (localStorage) {
+        localStorage.setItem('accounts', JSON.stringify(window.accounts))
+      }
+    }
   }
 }
 </script>
