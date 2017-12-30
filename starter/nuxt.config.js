@@ -43,9 +43,11 @@ module.exports = {
     '@nuxtjs/font-awesome'
   ],
   plugins: [
-    '~/plugins/vue-google-signin-button'
+    '~/plugins/vue-google-signin-button',
+    '~/plugins/maps.js'
   ],
   env: {
-    google_app_client_id: process.env.GOOGLE_APP_CLIENT_ID || ''
+    google_app_client_id: process.env.GOOGLE_APP_CLIENT_ID || '',
+    google_map_api_key: process.env.GOOGLE_MAP_API_KEI || ''
   }
 }

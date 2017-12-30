@@ -19,7 +19,8 @@
     "font-awesome": "^4.7.0",
     "nuxt": "^1.0.0-rc11",
     "vue-awesome": "^2.3.4",
-    "vue-google-signin-button": "^1.0.2"
+    "vue-google-signin-button": "^1.0.2",
+    "vue2-google-maps": "^0.8.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

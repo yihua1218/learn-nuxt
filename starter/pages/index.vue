@@ -1,12 +1,19 @@
 <template>
   <section class="container">
-    <div>
+    <div class="main">
       <h1 class="title">
         Hoebus
       </h1>
       <h2 class="subtitle">
         Laboratory
       </h2>
+      <gmap-map :center="{lat:1.38, lng:103.8}" :zoom="12">
+        <gmap-marker :position="{lat:1.38, lng:103.8}">
+        </gmap-marker>
+        <gmap-info-window :position="{lat:1.38, lng:103.8}">
+          Hello world!
+        </gmap-info-window>
+      </gmap-map>
       <login v-on:addAccount="addAccount"/>
       <AssociateAccounts :accounts="accounts"
         v-on:removeAccount="removeAccount"
@@ -53,6 +60,10 @@ export default {
   text-align: center;
 }
 
+.main {
+  width: 100%;
+}
+
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
@@ -72,5 +83,10 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.vue-map-container {
+  height: 250px;
+  margin: 10px;
 }
 </style>
