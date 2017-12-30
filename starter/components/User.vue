@@ -64,12 +64,19 @@ export default {
     }
   },
   methods: {
-    remove: function (event) {
+    updateStyle () {
+      this.classProviderIcon = this.class.provider_icon[this.provider]
+      this.styleProviderIcon = this.style.provider_icon[this.provider]
+    },
+    remove (event) {
       this.$emit('remove', event.target.attributes)
     },
-    select: function (event) {
+    select (event) {
       this.$emit('select', event.target.attributes)
     }
+  },
+  mounted: function () {
+    this.updateStyle()
   }
 }
 </script>

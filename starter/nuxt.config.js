@@ -44,10 +44,12 @@ module.exports = {
   ],
   plugins: [
     '~/plugins/vue-google-signin-button',
+    '~/plugins/vue-facebook-signin-button',
     '~/plugins/maps.js'
   ],
   env: {
     google_app_client_id: process.env.GOOGLE_APP_CLIENT_ID || '',
-    google_map_api_key: process.env.GOOGLE_MAP_API_KEI || ''
+    google_map_api_key: process.env.GOOGLE_MAP_API_KEI || '',
+    facebook_app_id: process.env.FACEBOOK_APP_ID || ''
   }
 }

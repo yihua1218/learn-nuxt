@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <g-signin-with-different-account-button
-      :params="googleSignInParams"
-      @success="onSignInSuccess"
-      @error="onSignInError">
-      Sign in with Google
-    </g-signin-with-different-account-button>    
-  </div>
+  <g-signin-with-different-account-button
+    :params="googleSignInParams"
+    @success="onSignInSuccess"
+    @error="onSignInError">
+    Sign in with Google
+  </g-signin-with-different-account-button>    
 </template>
 
 <script>
@@ -56,6 +54,6 @@ export default {
   border-radius: 3px;
   background-color: #3c82f7;
   color: #fff;
-  box-shadow: 0 3px 0 #0f69ff;
+  margin: 4px;
 }
 </style>

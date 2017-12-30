@@ -1,30 +1,51 @@
 <template>
   <section class="container">
-    <div>
-      <logo/>
+    <div class="main">
       <h1 class="title">
-        starter
+        Hoebus
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project
+        Laboratory
       </h2>
-      <login/>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
+      <MainMap />
+      <GoogleLogin v-on:addAccount="addAccount"/>
+      <FacebookLogin v-on:addAccount="addAccount"/>
+      <AssociateAccounts :accounts="accounts"
+        v-on:removeAccount="removeAccount"
+      />
     </div>
   </section>
 </template>
 
 <script>
+/* eslint-env browser */
 import Logo from '~/components/Logo.vue'
-import Login from '~/components/Login.vue'
+import MainMap from '~/components/MainMap.vue'
+import GoogleLogin from '~/components/GoogleLogin.vue'
+import FacebookLogin from '~/components/FacebookLogin.vue'
+import AssociateAccounts from '~/components/Associate_Accounts.vue'
 
 export default {
   components: {
     Logo,
-    Login
+    MainMap,
+    GoogleLogin,
+    FacebookLogin,
+    AssociateAccounts
+  },
+  computed: {
+    accounts () {
+      this.$store.commit('accounts/sync')
+      return this.$store.state.accounts.list
+    }
+  },
+  methods: {
+    addAccount: function (event) {
+      this.$store.commit('accounts/add', event)
+    },
+    removeAccount: function (event) {
+      this.$store.commit('accounts/remove', event)
+    }
   }
 }
 </script>
@@ -36,6 +57,10 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.main {
+  width: 100%;
 }
 
 .title {

@@ -7,8 +7,11 @@
       <h2 class="subtitle">
         Laboratory
       </h2>
-      <mainmap />
-      <login v-on:addAccount="addAccount"/>
+      <MainMap />
+      <div class="login-bar">
+        <GoogleLogin v-on:addAccount="addAccount"/>
+        <FacebookLogin v-on:addAccount="addAccount"/>
+      </div>
       <AssociateAccounts :accounts="accounts"
         v-on:removeAccount="removeAccount"
       />
@@ -19,15 +22,17 @@
 <script>
 /* eslint-env browser */
 import Logo from '~/components/Logo.vue'
-import Mainmap from '~/components/MainMap.vue'
-import Login from '~/components/Login.vue'
+import MainMap from '~/components/MainMap.vue'
+import GoogleLogin from '~/components/GoogleLogin.vue'
+import FacebookLogin from '~/components/FacebookLogin.vue'
 import AssociateAccounts from '~/components/Associate_Accounts.vue'
 
 export default {
   components: {
     Logo,
-    Mainmap,
-    Login,
+    MainMap,
+    GoogleLogin,
+    FacebookLogin,
     AssociateAccounts
   },
   computed: {
@@ -79,5 +84,9 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.login-bar {
+  
 }
 </style>
