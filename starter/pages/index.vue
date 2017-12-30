@@ -7,13 +7,16 @@
       <h2 class="subtitle">
         Laboratory
       </h2>
-      <login v-on:account="addAccount"/>
-      <AssociateAccounts :accounts="$data.accounts"/>
+      <login v-on:addAccount="addAccount"/>
+      <AssociateAccounts :accounts="accounts"
+        v-on:removeAccount="removeAccount"
+      />
     </div>
   </section>
 </template>
 
 <script>
+/* eslint-env browser */
 import Logo from '~/components/Logo.vue'
 import Login from '~/components/Login.vue'
 import AssociateAccounts from '~/components/Associate_Accounts.vue'
@@ -24,25 +27,18 @@ export default {
     Login,
     AssociateAccounts
   },
-  data () {
-    let accounts = {}
-
-    if (typeof window !== 'undefined') {
-      accounts = window.accounts || {}
-    }
-    return {
-      accounts: accounts
+  computed: {
+    accounts () {
+      this.$store.commit('accounts/sync')
+      return this.$store.state.accounts.list
     }
   },
   methods: {
-    addAccount: function (account) {
-      console.log('acccount:', account)
-      const accountKey = `${account.provider}:${account.id}`
-      window.accounts[accountKey] = account
-      this.accounts = window.accounts
-      if (localStorage) {
-        localStorage.setItem('accounts', JSON.stringify(window.accounts))
-      }
+    addAccount: function (event) {
+      this.$store.commit('accounts/add', event)
+    },
+    removeAccount: function (event) {
+      this.$store.commit('accounts/remove', event)
     }
   }
 }

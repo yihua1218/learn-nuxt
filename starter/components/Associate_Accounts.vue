@@ -1,9 +1,12 @@
 <template>
   <div class="user_list">
     <user v-for="account in accounts"
+      v-on:remove="removeAccount"
       v-bind:key="account.key"
       v-bind:img="account.img"
-      v-bind:name="account.name">
+      v-bind:name="account.name"
+      v-bind:provider="account.provider"
+      v-bind:id="account.id">
     </user>
   </div>
 </template>
@@ -17,7 +20,12 @@ export default {
   },
   props: [
     'accounts'
-  ]
+  ],
+  methods: {
+    removeAccount: function (event) {
+      this.$emit('removeAccount', event)
+    }
+  }
 }
 </script>
 

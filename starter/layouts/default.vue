@@ -4,23 +4,6 @@
   </div>
 </template>
 
-<script>
-/* eslint-env browser */
-if (typeof window !== 'undefined') {
-  if (typeof window.accounts === 'undefined') {
-    window.accounts = {}
-  }
-
-  if (typeof localStorage !== 'undefined') {
-    try {
-      window.accounts = JSON.parse(localStorage.getItem('accounts')) || {}
-    } catch (error) {
-      console.error(error)
-    }
-  }
-}
-</script>
-
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

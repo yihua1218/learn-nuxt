@@ -38,7 +38,7 @@ export default {
         name: googleUser.getBasicProfile().getName()
       }
 
-      this.$emit('account', account)
+      this.$emit('addAccount', account)
     },
     onSignInError (error) {
       // `error` contains any error occurred.
