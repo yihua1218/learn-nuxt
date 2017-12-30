@@ -7,6 +7,11 @@
       aria-hidden="true"
       v-on:click="remove">
     </i>
+    <i v-bind:class="classProviderIcon"
+      v-bind:style="styleProviderIcon"
+      aria-hidden="true"
+      v-on:click="select">
+    </i>
     <b-img class="user"
       :src="img"
       :alt="name">
@@ -23,11 +28,47 @@ export default {
     'id'
   ],
   data () {
-    return {}
+    return {
+      classProviderIcon: {
+        fa: true,
+        'fa-google': true,
+        'provider-icon': true
+      },
+      styleProviderIcon: {
+        color: '#DB4437'
+      },
+      class: {
+        provider_icon: {
+          google: {
+            fa: true,
+            'fa-google': true,
+            'provider-icon': true
+          },
+          facebook: {
+            fa: true,
+            'fa-facebook': true,
+            'provider-icon': true
+          }
+        }
+      },
+      style: {
+        provider_icon: {
+          google: {
+            color: '#DB4437'
+          },
+          facebook: {
+            color: '#3B5998'
+          }
+        }
+      }
+    }
   },
   methods: {
     remove: function (event) {
       this.$emit('remove', event.target.attributes)
+    },
+    select: function (event) {
+      this.$emit('select', event.target.attributes)
     }
   }
 }
@@ -45,6 +86,14 @@ export default {
   width: 40px;
   height: 40px;
   margin: 10px;
+}
+
+.provider-icon {
+  opacity: 1;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  margin: 2px;
 }
 
 .remove-icon {
