@@ -7,13 +7,7 @@
       <h2 class="subtitle">
         Laboratory
       </h2>
-      <gmap-map :center="{lat:1.38, lng:103.8}" :zoom="12">
-        <gmap-marker :position="{lat:1.38, lng:103.8}">
-        </gmap-marker>
-        <gmap-info-window :position="{lat:1.38, lng:103.8}">
-          Hello world!
-        </gmap-info-window>
-      </gmap-map>
+      <mainmap />
       <login v-on:addAccount="addAccount"/>
       <AssociateAccounts :accounts="accounts"
         v-on:removeAccount="removeAccount"
@@ -25,12 +19,14 @@
 <script>
 /* eslint-env browser */
 import Logo from '~/components/Logo.vue'
+import Mainmap from '~/components/MainMap.vue'
 import Login from '~/components/Login.vue'
 import AssociateAccounts from '~/components/Associate_Accounts.vue'
 
 export default {
   components: {
     Logo,
+    Mainmap,
     Login,
     AssociateAccounts
   },
@@ -83,10 +79,5 @@ export default {
 
 .links {
   padding-top: 15px;
-}
-
-.vue-map-container {
-  height: 250px;
-  margin: 10px;
 }
 </style>
