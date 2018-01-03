@@ -1,12 +1,6 @@
 <template>
   <section class="container">
     <div class="main">
-      <h1 class="title">
-        Hoebus
-      </h1>
-      <h2 class="subtitle">
-        Laboratory
-      </h2>
       <MainMap />
       <div class="login-bar">
         <GoogleLogin v-on:addAccount="addAccount"/>

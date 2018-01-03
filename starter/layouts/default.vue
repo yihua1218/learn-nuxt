@@ -1,10 +1,13 @@
 <template>
   <div>
+    <div class="header">
+      <b class="Hoebus" >Hoebus: </b><div class="Laboratory">Laboratory</div>
+    </div>
     <nuxt/>
   </div>
 </template>
 
-<style>
+<style lang="scss">
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
@@ -14,6 +17,21 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+.header {
+  font-size: 24px;
+  background-color: rgb(52, 79, 105);
+  padding: 2px;
+  .Hoebus {
+    color: rgb(95, 145, 165);
+  }
+  .Laboratory {
+    display: contents;
+    font-size: 16px;
+    color: white;
+    padding: 0px;
+  }
 }
 
 *, *:before, *:after {
