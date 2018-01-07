@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="map">
     <gmap-map :center="center" :zoom="12">
       <gmap-marker :position="{lat:25.1, lng:121.1}">
       </gmap-marker>
@@ -35,9 +35,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.map {
+  height: calc(100vh - 40px);
+}
 .vue-map-container {
-  height: 250px;
-  margin: 10px;
+  height: 100%;
+  width: 100%;
 }
 </style>

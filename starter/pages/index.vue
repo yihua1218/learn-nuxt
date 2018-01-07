@@ -1,16 +1,14 @@
 <template>
-  <section class="container">
-    <div class="main">
-      <MainMap />
-      <div class="login-bar">
-        <GoogleLogin v-on:addAccount="addAccount"/>
-        <FacebookLogin v-on:addAccount="addAccount"/>
-      </div>
-      <AssociateAccounts :accounts="accounts"
-        v-on:removeAccount="removeAccount"
-      />
+  <div class="main">
+    <MainMap />
+    <div class="login-bar">
+      <GoogleLogin v-on:addAccount="addAccount"/>
+      <FacebookLogin v-on:addAccount="addAccount"/>
     </div>
-  </section>
+    <AssociateAccounts :accounts="accounts"
+      v-on:removeAccount="removeAccount"
+    />
+  </div>
 </template>
 
 <script>

@@ -24,10 +24,11 @@ html {
   background-color: rgb(52, 79, 105);
   padding: 2px;
   .Hoebus {
+    display: inline;
     color: rgb(95, 145, 165);
   }
   .Laboratory {
-    display: contents;
+    display: inline;
     font-size: 16px;
     color: white;
     padding: 0px;
