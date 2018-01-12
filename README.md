@@ -6,7 +6,32 @@
 
 每個禮拜選擇一個上班日的下班後兩個小時的時間，希望能夠先在一個月內完成四次的分享課程達到這個梯次的目標。每一次的分享目標如下面所列：
 
-1. 環境建立與測試
-2. 第一個互動元件與網頁，第三方登錄
+1. 環境建立與測試、各種工具的使用
+2. 第一個互動元件與網頁，第三方登入
 3. 本地資料儲存、應用程式介面與資料庫存取
 4. 地圖應用：圖標、圖層、折線、多邊形
+
+## 第一週：環境建立與測試、各種工具的使用
+
+1. nodejs
+2. git & github
+3. Develop tool
+4. Vue Dev Plugin
+
+## 第二週：第一個互動元件與網頁、第三方登入
+
+1. Data Binding
+2. Computed
+3. Facebook Login & Google Login
+
+## 第三週：本地資料儲存、應用程式介面與資料庫存取
+
+1. Local Storage
+2. Web Service APi
+3. DB Connect
+
+## 第四週：地圖應用：圖標、圖層、折線、多邊形
+
+1. Google Map
+2. Custom Overlay View
+3. Poly Line
