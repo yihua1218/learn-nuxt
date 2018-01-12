@@ -15,7 +15,7 @@
 
 1. nodejs
 2. git & github
-3. Develop tool
+3. Developer tool
 4. Vue Dev Plugin
 
 ## 第二週：第一個互動元件與網頁、第三方登入
