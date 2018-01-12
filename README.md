@@ -20,9 +20,10 @@
 
 ## 第二週：第一個互動元件與網頁、第三方登入
 
-1. Data Binding
-2. Computed
-3. Facebook Login & Google Login
+1. Template, Style, Bootstrap
+2. Data Binding
+3. Computed
+4. Facebook Login & Google Login
 
 ## 第三週：本地資料儲存、應用程式介面與資料庫存取
 
