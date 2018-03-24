@@ -7,6 +7,7 @@
 
 ```
 C:\Windows\system32>choco install phantomjs
+C:\Windows\system32>choco install javaruntime
 ```
 
 ## Build Setup
