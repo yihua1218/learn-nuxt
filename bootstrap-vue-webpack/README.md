@@ -2,11 +2,18 @@
 
 > A Vue.js project
 
+## Prepare for Windows
+> Open Administrator Command Prompt, install PhantomJS using chocolatey
+
+```
+C:\Windows\system32>choco install phantomjs
+```
+
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+yarn
 
 # serve with hot reload at localhost:8080
 npm run dev
