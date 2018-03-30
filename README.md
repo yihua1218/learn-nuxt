@@ -36,3 +36,7 @@
 1. Google Map
 2. Custom Overlay View
 3. Poly Line
+
+# Reference
+
+1. [Nuxt.js API Example using Vuex and axios](https://github.com/davidroyer/nuxt-api-example)
