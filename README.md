@@ -41,3 +41,4 @@
 
 1. [Nuxt.js API Example using Vuex and axios](https://github.com/davidroyer/nuxt-api-example)
 2. [A helper utility to simplify the usage of REST APIs with Vuex 2 (and 3). Based on axios.](https://github.com/christianmalek/vuex-rest-api)
+3. [Vue Vuex REST TodoMVC example](https://glebbahmutov.com/blog/vue-vuex-rest-todomvx/)
