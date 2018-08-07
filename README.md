@@ -16,7 +16,19 @@
 1. nodejs
 2. git & github
 3. Developer tool
-4. Vue Dev Plugin
+4. Vue CLI, Vue UI, and Vue Dev Plugin
+
+### Install Vue CLI
+
+``` bash
+$ yarn global add @vue/cli
+```
+
+### Start Vue Project Manager
+
+``` bash
+$ vue ui
+```
 
 ## 第二週：第一個互動元件與網頁、第三方登入
 
